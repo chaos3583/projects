@@ -1,17 +1,28 @@
 package com.chaos.demo.demo1030;
 
+import com.chaos.demo.demo1030.MyLinkedList.Node;
 
+import java.util.LinkedList;
+
+/**
+ * @program: demo
+ * @description: 测试单向链表
+ * @author: 廖鹏
+ * @create: 2018-11-01
+ **/
 public class Demo01 {
-    
     public static void main(String[] args){
-        LinkedList list = new LinkedList();
-        list.insertFirst(2);
-        list.insertFirst(3);
-        list.printAll();
-//        SinglyLinkedList sinList = new SinglyLinkedList();
-//        sinList.insertToHead(2);
-//        sinList.insertToHead(3);
-//        sinList.printAll();
+        MyLinkedList linkedList = new MyLinkedList();
+//        linkedList.insertHead(2);
+        linkedList.insertHead(3);
+//        linkedList.insertHead(4);
+//        linkedList.insertHead(5);
+//        linkedList.insertLast(3);
+//        linkedList.insertLast(2);
+//        linkedList.insertLast(4);
+//        Node byValue = linkedList.findByValue(3);
+//        System.out.println(byValue.getData());
+        linkedList.remove(3);
+        linkedList.printAll();
     }
-
 }
