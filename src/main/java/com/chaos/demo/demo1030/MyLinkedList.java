@@ -82,6 +82,7 @@ public class MyLinkedList {
                return false;
            }
        }
+
        //有多个节点
        Node node = this.top;
        while (node!=null){
@@ -117,6 +118,48 @@ public class MyLinkedList {
                 node=node.next;
             }
         }
+    }
+
+    /**
+     * 单向链表反转，方法1，逐次遍历
+     */
+    public Node revert(){
+        if(this.top==null || this.top.next==null){
+            return this.top;
+        }
+        Node preNode = this.top;
+        Node curNode =this.top.next;
+        Node  nexNode=null;
+        this.top.setNext(null);
+        while (curNode!=null){
+            //效果一样的
+//          nexNode=curNode.getNext();
+//          curNode.setNext(preNode);
+            nexNode = curNode.next;
+            curNode.next = preNode;
+            preNode=curNode;
+            curNode=nexNode;
+        }
+        return preNode;
+    }
+
+    public Node revert2(){
+        return recursionList(this.top);
+    }
+    /**
+     * 单向链表反转，方法二：递归
+     * @return
+     */
+    public Node recursionList(Node node){
+        if(node==null || node.next==null){
+           return node;
+        }
+        Node headNode =  recursionList(node.next);//递归到最后一个节点
+        System.out.println("当前节点："+node.getData());
+        System.out.println("递归返回的节点："+headNode.getData());
+        node.next.next=node;//反转链表指向
+        node.next=null;//断环
+        return headNode;//新链表的表头永远指向的是旧链表的表尾
     }
 
     public class Node{
