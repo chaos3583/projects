@@ -2,13 +2,13 @@ package com.chaos.demo.demo1106;
 
 /**
  * @program: demo
- * @description: 测试数组实现的循环队列,循环队列始终会浪费一个数组空间
+ * @description: 测试基于链表实现的队列demo
  * @author: 廖鹏
  * @create: 2018-11-08
  **/
-public class CircularQueueDemo {
+public class QueueBaseOnLinkedListDemo {
     public static void main(String[] args){
-        CircularArrayQueue queue = new CircularArrayQueue(5);
+        QueueBaseOnLinkedList queue = new QueueBaseOnLinkedList();
         queue.inQueue("a");
         queue.inQueue("b");
         queue.inQueue("c");
@@ -17,9 +17,6 @@ public class CircularQueueDemo {
         queue.outQueue();
         queue.outQueue();
         queue.outQueue();
-        queue.inQueue("h");
-        Boolean e = queue.inQueue("e");
-        Boolean f = queue.inQueue("f");
         queue.printAll();
     }
 }
