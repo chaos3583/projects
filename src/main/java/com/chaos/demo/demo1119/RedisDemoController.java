@@ -1,36 +1,28 @@
-package com.chaos.demo.web;
+package com.chaos.demo.demo1119;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Date;
 import java.util.List;
 
 /**
  * @program: demo
- * @description: web类
+ * @description: 用redis实现用户1小时内访问不能超过5次
  * @author: 廖鹏
  * @create: 2018-11-19
  **/
 @RestController
-@RequestMapping("/chaos")
-public class WebController {
+public class RedisDemoController {
 
     @Autowired
     public RedisTemplate redisTemplate;
 
-    /**
-     * 校验登录
-     * @param userId
-     * @param age
-     * @return
-     */
-    @RequestMapping(value="/login",method = RequestMethod.GET)
-    public Object first(String userId,Integer age) {
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@方法执行中ing..................");
+    @RequestMapping("/login")
+    public Object login(String userId){
         Long count = redisTemplate.opsForList().size(userId);
         Long total = count+1;
         if(count<5){
@@ -54,11 +46,6 @@ public class WebController {
         return "第"+total+"次登录";
     }
 
-    @RequestMapping("/doError")
-    public Object error() {
-        return 1 / 0;
-    }
-
     /**
      * 清空当前list
      * @param userId
@@ -78,9 +65,8 @@ public class WebController {
         StringBuilder sb = new StringBuilder();
         List range = redisTemplate.opsForList().range(userId, 0, -1);
         for (Object o : range) {
-                sb.append(o).append(",");
+            sb.append(o).append(",");
         }
         return sb.toString();
     }
-
 }
