@@ -1,7 +1,5 @@
 package com.chaos.demo.demo1121;
 
-import java.lang.ref.SoftReference;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -30,7 +28,7 @@ public class Demo01 {
      * 生产者
      */
     class Producer implements Runnable{
-        int i=0;
+        int i=1;
         @Override
         public void run() {
             while (true){
