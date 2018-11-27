@@ -9,13 +9,13 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @author: 廖鹏
  * @create: 2018-11-22
  **/
-public class Demo02 {
+public class ProducerAndComsumer2 {
     private final BlockingQueue<Integer> queue = new LinkedBlockingQueue<>(10);
 
     public static void main(String[] args){
-        Demo02 demo02 = new Demo02();
-        demo02.new Producer().start();
-        demo02.new Comsumer().start();
+        ProducerAndComsumer2 producerAndComsumer2 = new ProducerAndComsumer2();
+        producerAndComsumer2.new Producer().start();
+        producerAndComsumer2.new Comsumer().start();
     }
 
     class Producer extends Thread{

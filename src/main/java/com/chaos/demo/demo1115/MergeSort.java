@@ -33,14 +33,17 @@ public class Demo04 {
         int i =p;
         int j = q+1;
         int k = 0;
+        //可以认为a是两个数组，p-q是一个，q-r是一个，
+        // 将两个数组中的元素逐个比较，小的元素方法到临时数组temp中
         while (i<=q && j<=r){
             if(a[i]<a[j]){
-                temp[k++] = a[i++];
+                temp[k++] = a[i++];//赋值完后，k++,i++
             }else{
-                temp[k++] = a[j++];
+                temp[k++] = a[j++];//赋值完后，k++，j++
             }
         }
-        //判断哪个数组还有剩余值
+        //以上循环至少有一个数组遍历完了，也可能有一个数组还没遍历完
+        // 判断哪个数组还有剩余值,
         int start =i;
         int end = q;
         if(j<=r){

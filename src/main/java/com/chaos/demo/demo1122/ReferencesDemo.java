@@ -11,7 +11,7 @@ import java.lang.ref.WeakReference;
  * @author: 廖鹏
  * @create: 2018-11-22
  **/
-public class Demo01 {
+public class ReferencesDemo {
     public static void main(String[] args){
         //强引用，只要引用还在，垃圾回收器就不会回收
         People strongPe= new People("chaos",20);

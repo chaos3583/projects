@@ -10,9 +10,9 @@ import java.util.Queue;
  * @author: 廖鹏
  * @create: 2018-11-21
  **/
-public class Demo01 {
+public class ProducerAndComsumer1 {
     public static void main(String[] args){
-        Demo01 demo01 = new Demo01();
+        ProducerAndComsumer1 demo01 = new ProducerAndComsumer1();
         Producer producer = demo01.new Producer();
         Comsumer comsumer = demo01.new Comsumer();
         Thread producerThread = new Thread(producer);
