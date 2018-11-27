@@ -11,7 +11,7 @@ import java.util.List;
  * @author: 廖鹏
  * @create: 2018-11-15
  **/
-public class Demo01 {
+public class BubbleSort {
 
     public static void main(String[] args){
         List<Integer> list = new ArrayList<>();

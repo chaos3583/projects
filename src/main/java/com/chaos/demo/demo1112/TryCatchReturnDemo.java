@@ -6,7 +6,7 @@ package com.chaos.demo.demo1112;
  * @author: 廖鹏
  * @create: 2018-11-12
  **/
-public class Demo01 {
+public class TryCatchReturnDemo {
     public static void main(String[] args){
         try {
 

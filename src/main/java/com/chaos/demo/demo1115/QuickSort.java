@@ -6,7 +6,7 @@ package com.chaos.demo.demo1115;
  * @author: 廖鹏
  * @create: 2018-11-21
  **/
-public class Demo05 {
+public class QuickSort {
 
     public static void main(String[] args){
         int[] a = {6,4,7,2,8,10,5};

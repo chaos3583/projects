@@ -6,7 +6,7 @@ package com.chaos.demo.demo1115;
  * @author: 廖鹏
  * @create: 2018-11-15
  **/
-public class Demo04 {
+public class MergeSort {
 
     public static void main(String[] args){
         int[] a = {2,3,1,4,65,44,23,12};

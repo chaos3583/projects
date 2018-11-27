@@ -7,7 +7,7 @@ package com.chaos.demo.demo1120;
  * @author: 廖鹏
  * @create: 2018-11-20
  **/
-public class Demo01 {
+public class BinarySearch {
 
     public static void main(String[] args){
         int[] a = {2,3,4,5,6,7,8,9,10};

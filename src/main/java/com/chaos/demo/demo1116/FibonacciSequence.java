@@ -7,7 +7,7 @@ package com.chaos.demo.demo1116;
  * @author: 廖鹏
  * @create: 2018-11-16
  **/
-public class Demo01 {
+public class FibonacciSequence {
 
     public static void main(String[] args){
         int f = fibonacci2(5);
