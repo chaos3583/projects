@@ -41,7 +41,7 @@ public class CountingSort {
         }
         //定义临时的排序数组r
         int r[] = new int[n];
-        for (int i = n-1; i >=0; i--) {
+        for (int i = 0; i <n; i++) {
             int index = c[a[i]]-1;
             r[index] = a[i];
             c[a[i]]--;

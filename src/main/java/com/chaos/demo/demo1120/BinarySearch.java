@@ -21,7 +21,7 @@ public class BinarySearch {
      * 注意三点：
      * 1、while循环退出条件是start <= end 而不是start < end
      * 2、mid取值，这里用的是start+(end-start)/2而不是(start+end)/2,因为当数据很大的时候start+end可能会溢出
-     * 3、循环中start和end的取值，是mid-1和mid+1而不是mid
+     * 3、循环中start和end的取值，是mid-1和mid+1而不是mid1
      * @param a
      * @param value
      */
