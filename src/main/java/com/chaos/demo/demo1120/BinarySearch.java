@@ -4,6 +4,7 @@ package com.chaos.demo.demo1120;
 /**
  * @program: demo
  * @description: 简单的二分查找
+ * 二分查找针对的是有序数据集合
  * @author: 廖鹏
  * @create: 2018-11-20
  **/
