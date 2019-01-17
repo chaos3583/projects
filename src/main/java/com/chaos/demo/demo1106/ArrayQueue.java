@@ -29,7 +29,7 @@ public class ArrayQueue {
             //队列已满
             return false;
         }
-        items[tail]=item;
+        items[tail]=item; 
         tail++;
         return true;
     }
