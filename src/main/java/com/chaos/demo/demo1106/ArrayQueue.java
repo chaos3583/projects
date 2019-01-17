@@ -44,6 +44,7 @@ public class ArrayQueue {
         }
         String temp = items[head];
         items[head]=null;
+
         head++;
         return temp;
 
