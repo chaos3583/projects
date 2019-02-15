@@ -1,5 +1,6 @@
 package com.chaos.demo.web;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,9 @@ public class WebController {
     @RequestMapping(value="/login",method = RequestMethod.GET)
     public Object first(String userId,Integer age) {
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@方法执行中ing..................");
+        if (StringUtils.isEmpty(userId)){
+            return "userId为空";
+        }
         Long count = redisTemplate.opsForList().size(userId);
         Long total = count+1;
         if(count<5){
