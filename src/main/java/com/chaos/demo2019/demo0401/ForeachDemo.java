@@ -36,6 +36,8 @@ public class ForeachDemo {
        list.forEach(s -> {
            System.out.println(s);
        });
+
+
     }
 
 }
