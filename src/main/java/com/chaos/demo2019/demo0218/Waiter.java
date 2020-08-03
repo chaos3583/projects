@@ -8,7 +8,11 @@ package com.chaos.demo2019.demo0218;
  **/
 class Waiter implements Runnable {
     private boolean shouldFinish;
-    void finish() { shouldFinish = true; }
+
+    void finish() {
+        shouldFinish = true;
+    }
+
     public void run() {
         long iteration = 0;
         while (!shouldFinish) {

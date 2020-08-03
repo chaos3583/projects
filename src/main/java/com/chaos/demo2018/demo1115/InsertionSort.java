@@ -12,7 +12,7 @@ import java.util.List;
  * @create: 2018-11-15
  **/
 public class InsertionSort {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         list.add(6);
         list.add(4);
@@ -22,25 +22,25 @@ public class InsertionSort {
         list.add(10);
         list.add(5);
         list.add(8);
-        insertionSort(list,list.size());
+        insertionSort(list, list.size());
         for (Integer integer : list) {
-            System.out.println(integer+"  ");
+            System.out.println(integer + "  ");
         }
     }
 
-    public static void insertionSort(List<Integer> list,Integer size){
-        if(!CollectionUtils.isEmpty(list)){
+    public static void insertionSort(List<Integer> list, Integer size) {
+        if (!CollectionUtils.isEmpty(list)) {
             for (int i = 0; i < size; i++) {
                 Integer m = list.get(i);
-                int j=i-1;
-                for (; j >=0; j--) {
-                     if(m<list.get(j)){
-                         list.set(j+1,list.get(j));
-                     }else {
-                         break;
-                     }
+                int j = i - 1;
+                for (; j >= 0; j--) {
+                    if (m < list.get(j)) {
+                        list.set(j + 1, list.get(j));
+                    } else {
+                        break;
+                    }
                 }
-                list.set(j+1,m);
+                list.set(j + 1, m);
             }
         }
     }

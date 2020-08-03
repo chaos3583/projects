@@ -6,6 +6,7 @@ package com.chaos.demo2019.demo0211;
  * * @author: liaopeng
  * * @create: 2019-02-12 11:19
  **/
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -22,7 +23,6 @@ public class ForkJoinTask extends RecursiveTask<List<String>> {
     private int start;
 
     private int end;
-
 
 
     public ForkJoinTask(int start, int end) {
@@ -42,7 +42,7 @@ public class ForkJoinTask extends RecursiveTask<List<String>> {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println("线程池中线程数目："+ForkJoinTask.getPool().getPoolSize()+"，队列中等待执行的任务数目："+
+                System.out.println("线程池中线程数目：" + ForkJoinTask.getPool().getPoolSize() + "，队列中等待执行的任务数目：" +
                         ForkJoinTask.getPool().getQueuedTaskCount());
                 list.add("wo");
             }
@@ -61,25 +61,26 @@ public class ForkJoinTask extends RecursiveTask<List<String>> {
 
         return list;
     }
+
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         List<String> list = new ArrayList<String>();
-        for(int i=1;i<=330;i++){
-            list.add("i------"+i);
+        for (int i = 1; i <= 330; i++) {
+            list.add("i------" + i);
         }
         System.out.println(list.size());
         long s1 = System.currentTimeMillis();
         // 参数默认是cpu数（可以自定义）
         ForkJoinPool pool = new ForkJoinPool();
         // 提交可分解的PrintTask任务
-        Future<List<String>> ss =  pool.submit(new ForkJoinTask(0,list.size()));
+        Future<List<String>> ss = pool.submit(new ForkJoinTask(0, list.size()));
         //线程阻塞，等待所有任务完成
         List<String> list1 = ss.get();
         pool.awaitTermination(1, TimeUnit.SECONDS);
         // 关闭线程池
         pool.shutdown();
         long s2 = System.currentTimeMillis();
-        long s =s2-s1;
+        long s = s2 - s1;
         System.out.println(s);
     }
 }

@@ -6,8 +6,8 @@ import java.util.Map;
  */
 public class demo1 {
 
-    public static void main(String[] args){
-        Map<String,Object> params = new HashMap<String,Object>();
+    public static void main(String[] args) {
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("1", 1);
         Object put2 = params.put("1", 2);
         System.out.println(put2.toString());

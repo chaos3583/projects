@@ -8,7 +8,7 @@ package com.chaos.demo2018.demo1101;
  * @create: 2018-10-31
  **/
 public class Demo01 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         LinkedListStack stack = new LinkedListStack();
         stack.pushStack("a");
         stack.pushStack("b");

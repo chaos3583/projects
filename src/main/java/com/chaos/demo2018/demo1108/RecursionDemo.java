@@ -9,18 +9,18 @@ package com.chaos.demo2018.demo1108;
  **/
 public class RecursionDemo {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int function = function(8);
         System.out.println(function);
     }
 
-    public static int function(int n){
-        if(n==1){
+    public static int function(int n) {
+        if (n == 1) {
             return 1;
         }
-        if(n==2){
+        if (n == 2) {
             return 2;
         }
-        return function(n-1)+function(n-2);
+        return function(n - 1) + function(n - 2);
     }
 }

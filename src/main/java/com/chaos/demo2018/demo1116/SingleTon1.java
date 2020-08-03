@@ -7,12 +7,14 @@ package com.chaos.demo2018.demo1116;
  * @create: 2018-11-16
  **/
 public class SingleTon1 {
-    private static SingleTon1 s1=null;
-    private SingleTon1(){}
+    private static SingleTon1 s1 = null;
 
-    public static synchronized SingleTon1 getInstans(){
-        if(s1==null){
-            s1=new SingleTon1();
+    private SingleTon1() {
+    }
+
+    public static synchronized SingleTon1 getInstans() {
+        if (s1 == null) {
+            s1 = new SingleTon1();
         }
         return s1;
     }

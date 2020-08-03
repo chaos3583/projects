@@ -7,7 +7,7 @@ package com.chaos.demo2018.demo1106;
  * @create: 2018-11-08
  **/
 public class QueueBaseOnLinkedListDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         QueueBaseOnLinkedList queue = new QueueBaseOnLinkedList();
         queue.inQueue("a");
         queue.inQueue("b");

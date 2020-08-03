@@ -28,15 +28,14 @@ public class ForeachDemo {
 //           }
 //       });
 
-       List<String> list = new ArrayList<String>(){
-           {
-               this.add("123");
-           }
-       };
-       list.forEach(s -> {
-           System.out.println(s);
-       });
-
+        List<String> list = new ArrayList<String>() {
+            {
+                this.add("123");
+            }
+        };
+        list.forEach(s -> {
+            System.out.println(s);
+        });
 
 
     }

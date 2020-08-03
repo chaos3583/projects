@@ -9,7 +9,7 @@ import com.chaos.demo2018.demo1030.MyLinkedList.Node;
  * @create: 2018-11-01
  **/
 public class Demo01 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         MyLinkedList linkedList = new MyLinkedList();
         linkedList.insertHead(2);
         linkedList.insertHead(3);

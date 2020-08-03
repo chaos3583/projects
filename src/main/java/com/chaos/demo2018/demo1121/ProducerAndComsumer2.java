@@ -12,19 +12,20 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ProducerAndComsumer2 {
     private final BlockingQueue<Integer> queue = new LinkedBlockingQueue<>(10);
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ProducerAndComsumer2 producerAndComsumer2 = new ProducerAndComsumer2();
         producerAndComsumer2.new Producer().start();
         producerAndComsumer2.new Comsumer().start();
     }
 
-    class Producer extends Thread{
-        int i=1;
+    class Producer extends Thread {
+        int i = 1;
+
         @Override
         public void run() {
-            while (true){
+            while (true) {
                 try {
-                    System.out.println("生产数据："+i);
+                    System.out.println("生产数据：" + i);
                     queue.put(i++);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -38,13 +39,13 @@ public class ProducerAndComsumer2 {
         }
     }
 
-    class Comsumer extends Thread{
+    class Comsumer extends Thread {
         @Override
         public void run() {
-            while (true){
+            while (true) {
                 try {
                     Integer take = queue.take();
-                    System.out.println("消费数据："+take);
+                    System.out.println("消费数据：" + take);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

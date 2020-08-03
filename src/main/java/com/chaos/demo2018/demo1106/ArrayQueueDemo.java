@@ -7,7 +7,7 @@ package com.chaos.demo2018.demo1106;
  * @create: 2018-11-06
  **/
 public class ArrayQueueDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ArrayQueue queue = new ArrayQueue(6);
         queue.inQueue("a");
         queue.inQueue("b");

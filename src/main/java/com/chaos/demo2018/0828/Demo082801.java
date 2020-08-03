@@ -2,20 +2,20 @@
  * 死锁demo
  */
 public class Demo082801 {
-    public static String resourceA="A";
-    public static String resourceB="B";
+    public static String resourceA = "A";
+    public static String resourceB = "B";
 
-    public  static void deadLock(){
+    public static void deadLock() {
         Thread threadA = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (resourceA){
+                synchronized (resourceA) {
                     try {
                         Thread.sleep(1000);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                     }
                     System.out.println("获得A锁执行线程A");
-                    synchronized (resourceB){
+                    synchronized (resourceB) {
                         System.out.println("获得B锁执行线程A");
                     }
                 }
@@ -25,9 +25,9 @@ public class Demo082801 {
         Thread threadB = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (resourceB){
+                synchronized (resourceB) {
                     System.out.println("获得B锁执行线程B");
-                    synchronized (resourceA){
+                    synchronized (resourceA) {
                         System.out.println("获得A锁执行线程B");
                     }
                 }
@@ -38,7 +38,7 @@ public class Demo082801 {
         threadB.start();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         deadLock();
     }
 }

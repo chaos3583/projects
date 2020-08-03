@@ -13,7 +13,7 @@ public class Demo01 {
     public static AtomicInteger i = new AtomicInteger();
 
     public static void main(String[] args) {
-        while(i.get()<10){
+        while (i.get() < 10) {
             System.out.println(i);
             i.incrementAndGet();
         }

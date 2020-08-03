@@ -18,46 +18,47 @@ public class QueueBaseOnLinkedList {
 
     /**
      * 入队
+     *
      * @param value
      * @return
      */
-    public void inQueue(String value){
-        Node node = new Node(value,null);
-        if(head==null){
+    public void inQueue(String value) {
+        Node node = new Node(value, null);
+        if (head == null) {
             //说明队列为空
-            tail=node;
-            head=node;
-            tail.next=null;
-        }else{
-            tail.next=node;
-            tail =tail.next;
+            tail = node;
+            head = node;
+            tail.next = null;
+        } else {
+            tail.next = node;
+            tail = tail.next;
         }
     }
 
     /**
      * 出队
      */
-    public void outQueue(){
-        if(head==null){
+    public void outQueue() {
+        if (head == null) {
             return;
         }
-        head=head.next;
+        head = head.next;
     }
 
 
-    public void printAll(){
-        if(head==null){
+    public void printAll() {
+        if (head == null) {
             System.out.println("is empty");
             return;
         }
         Node tempNode = head;
-        while (tempNode!=null){
+        while (tempNode != null) {
             System.out.println(tempNode.getData());
             tempNode = tempNode.next;
         }
     }
 
-    public class Node{
+    public class Node {
         private String data;
         private Node next;
 

@@ -19,40 +19,42 @@ public class Browser {
 
     /**
      * 前进，从forwardBrowser栈中取出栈顶网址,
+     *
      * @return
      */
-    public String forwardBrowser(){
+    public String forwardBrowser() {
         String forwardAddress = forwardBrowserStack.outStack();//forwardBrowserStack出栈
         backBrowserStack.pushStack(forwardAddress);//backBrowserStack入栈
-        currentPage=forwardAddress;
+        currentPage = forwardAddress;
         return forwardAddress;
     }
 
     /**
      * 回退，从backBrowser栈中取出栈顶的网址
      */
-    public String backBrowser(){
+    public String backBrowser() {
         String outAddress = backBrowserStack.outStack();//出栈
         forwardBrowserStack.pushStack(outAddress);//将出栈的网址入栈到forwardBrowserStack的栈顶
         String backAddress = backBrowserStack.getTopStack();//取栈顶网址
-        this.currentPage=backAddress;//当前页为backBrowserStack的栈顶网址
+        this.currentPage = backAddress;//当前页为backBrowserStack的栈顶网址
         return backAddress;
     }
 
     /**
      * 打开一个新的网址，将网址存到backBrowser
+     *
      * @param address
      */
-    public void open(String address){
+    public void open(String address) {
         backBrowserStack.pushStack(address);
         forwardBrowserStack.clearStack();
-        currentPage=address;
+        currentPage = address;
     }
 
     /**
      * 打印当前所在的网址
      */
-    public void printCurrentAddress(){
+    public void printCurrentAddress() {
         System.out.println(currentPage);
     }
 }

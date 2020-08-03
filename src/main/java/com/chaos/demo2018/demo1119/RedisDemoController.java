@@ -6,6 +6,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Date;
 import java.util.List;
 
@@ -22,45 +23,47 @@ public class RedisDemoController {
     public RedisTemplate redisTemplate;
 
     @RequestMapping("/login")
-    public Object login(String userId){
+    public Object login(String userId) {
         Long count = redisTemplate.opsForList().size(userId);
-        Long total = count+1;
-        if(count<5){
-            redisTemplate.opsForList().rightPush(userId,new Date());
-        }else{
+        Long total = count + 1;
+        if (count < 5) {
+            redisTemplate.opsForList().rightPush(userId, new Date());
+        } else {
             Object obj = redisTemplate.opsForList().index(userId, 0);
             Date date = null;
-            if(obj!=null){
-                date =  (Date)obj;
+            if (obj != null) {
+                date = (Date) obj;
             }
             Date nowDate = new Date();
-            long l = (nowDate.getTime() - date.getTime())/1000;//秒数
-            System.out.println("时间差为："+l);
-            if(l<3600){
-                return "1小时内登录超过5次，当前为第"+total+"次登录";
-            }else{
+            long l = (nowDate.getTime() - date.getTime()) / 1000;//秒数
+            System.out.println("时间差为：" + l);
+            if (l < 3600) {
+                return "1小时内登录超过5次，当前为第" + total + "次登录";
+            } else {
                 redisTemplate.opsForList().leftPop(userId);
-                redisTemplate.opsForList().rightPush(userId,new Date());
+                redisTemplate.opsForList().rightPush(userId, new Date());
             }
         }
-        return "第"+total+"次登录";
+        return "第" + total + "次登录";
     }
 
     /**
      * 清空当前list
+     *
      * @param userId
      */
-    @RequestMapping(value="/clear",method = RequestMethod.GET)
+    @RequestMapping(value = "/clear", method = RequestMethod.GET)
     public void clear(String userId) {
         redisTemplate.delete(userId);
     }
 
     /**
      * 打印当前list中的值
+     *
      * @param userId
      * @return
      */
-    @RequestMapping(value="/printAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/printAll", method = RequestMethod.GET)
     public Object printAll(String userId) {
         StringBuilder sb = new StringBuilder();
         List range = redisTemplate.opsForList().range(userId, 0, -1);

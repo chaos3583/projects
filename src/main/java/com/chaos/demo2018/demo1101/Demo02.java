@@ -7,7 +7,7 @@ package com.chaos.demo2018.demo1101;
  * @create: 2018-11-01
  **/
 public class Demo02 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Browser browser = new Browser();
         browser.open("www.baidu.com");
         browser.open("www.googel.cn");

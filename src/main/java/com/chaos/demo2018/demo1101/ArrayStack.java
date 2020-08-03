@@ -7,21 +7,22 @@ package com.chaos.demo2018.demo1101;
  * @create: 2018-11-06
  **/
 public class ArrayStack {
-    private int count=0;
+    private int count = 0;
     private String[] items;
-    private int size=0;
+    private int size = 0;
 
     public ArrayStack(int n) {
         items = new String[n];
-        size=n;
+        size = n;
     }
 
     /**
      * 入栈
+     *
      * @param item
      */
-    public Boolean pushStack(String item){
-        if(count==size){
+    public Boolean pushStack(String item) {
+        if (count == size) {
             return false;
         }
         items[count] = item;
@@ -31,13 +32,14 @@ public class ArrayStack {
 
     /**
      * 出栈
+     *
      * @return
      */
-    public String outStack(){
-        if(count==0){
+    public String outStack() {
+        if (count == 0) {
             return null;
         }
-        String outString = items[count-1];
+        String outString = items[count - 1];
         count--;
         return outString;
     }
@@ -45,8 +47,8 @@ public class ArrayStack {
     /**
      * 打印栈中的所有元素
      */
-    public void printAll(){
-        if(count==0){
+    public void printAll() {
+        if (count == 0) {
             System.out.println("is empty");
         }
         for (int i = 0; i < items.length; i++) {

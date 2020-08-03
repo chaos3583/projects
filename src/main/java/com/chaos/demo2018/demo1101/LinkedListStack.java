@@ -7,7 +7,7 @@ package com.chaos.demo2018.demo1101;
  * @create: 2018-11-01
  **/
 public class LinkedListStack {
-    private  Node top;
+    private Node top;
     private int size;
 
     public LinkedListStack() {
@@ -17,26 +17,28 @@ public class LinkedListStack {
 
     /**
      * 入栈
+     *
      * @param value
      */
-    public void pushStack(String value){
+    public void pushStack(String value) {
         Node node = this.top;
-        Node newNode = new  Node(value,null);
-        if(node==null){
-            this.top=newNode;
-        }else{
-            newNode.next=this.top;
-            this.top=newNode;
+        Node newNode = new Node(value, null);
+        if (node == null) {
+            this.top = newNode;
+        } else {
+            newNode.next = this.top;
+            this.top = newNode;
         }
         size++;
     }
 
     /**
      * 出栈
+     *
      * @return
      */
-    public String outStack(){
-        if(this.top==null){
+    public String outStack() {
+        if (this.top == null) {
             return null;
         }
         Node outNode = this.top;
@@ -47,12 +49,13 @@ public class LinkedListStack {
 
     /**
      * 获取栈顶元素
+     *
      * @return
      */
-    public String getTopStack(){
-        if(this.top==null){
+    public String getTopStack() {
+        if (this.top == null) {
             return "is empty";
-        }else {
+        } else {
             return this.top.getData();
         }
     }
@@ -60,14 +63,14 @@ public class LinkedListStack {
     /**
      * 打印栈中的所有数据
      */
-    public void printAll(){
-        if(this.top==null){
+    public void printAll() {
+        if (this.top == null) {
             System.out.println(" ");
-        }else{
+        } else {
             Node currentNode = this.top;
-            while (currentNode!=null){
-                System.out.println(currentNode.getData()+" ");
-                currentNode=currentNode.next;
+            while (currentNode != null) {
+                System.out.println(currentNode.getData() + " ");
+                currentNode = currentNode.next;
             }
         }
     }
@@ -75,12 +78,12 @@ public class LinkedListStack {
     /**
      * 清空栈
      */
-    public void clearStack(){
-        this.top=null;
-        this.size=0;
+    public void clearStack() {
+        this.top = null;
+        this.size = 0;
     }
 
-    private class Node{
+    private class Node {
         private String data;
         private Node next;
 
@@ -88,6 +91,7 @@ public class LinkedListStack {
             this.data = data;
             this.next = next;
         }
+
         public String getData() {
             return data;
         }

@@ -13,7 +13,7 @@ import java.util.List;
  **/
 public class BubbleSort {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         list.add(4);
         list.add(6);
@@ -24,27 +24,27 @@ public class BubbleSort {
         list.add(5);
         list.add(8);
 
-        bubbleSort(list,list.size());
+        bubbleSort(list, list.size());
 
         for (Integer integer : list) {
-            System.out.println(integer+"  ");
+            System.out.println(integer + "  ");
         }
     }
 
-    public static void bubbleSort(List<Integer> list ,Integer size){
-        if(!CollectionUtils.isEmpty(list)){
+    public static void bubbleSort(List<Integer> list, Integer size) {
+        if (!CollectionUtils.isEmpty(list)) {
             for (int i = 0; i < size; i++) {
-                 Integer m = list.get(i);
-                for (int j = i+1; j < size; j++) {
-                    Integer n=list.get(j);
-                    if(m>n){
+                Integer m = list.get(i);
+                for (int j = i + 1; j < size; j++) {
+                    Integer n = list.get(j);
+                    if (m > n) {
                         Integer temp = m;
-                        m=n;
-                        n=temp;
+                        m = n;
+                        n = temp;
                     }
-                    list.set(j,n);
+                    list.set(j, n);
                 }
-              list.set(i,m);
+                list.set(i, m);
             }
         }
     }
