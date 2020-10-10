@@ -14,7 +14,8 @@ import java.util.TreeMap;
 public class Test {
     public static void main(String[] args) {
         int[] a = {2, 3, 1, 66, 5, 3, 7};
-        QuickSort.quickSort(a,0,a.length-1);
+//        QuickSort.quickSort(a,0,a.length-1);
+        MergeSort.mergeSort(a,0,a.length-1);
         printAll(a);
 
         Map<String, String> treeMap = new TreeMap<>(new Comparator<String>() {
