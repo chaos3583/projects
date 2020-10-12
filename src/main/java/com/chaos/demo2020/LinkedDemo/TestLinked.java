@@ -12,10 +12,12 @@ public class TestLinked {
         list.insertHead(1);
         list.insertHead(2);
         list.insertHead(3);
-        list.insertLast(4);
+        list.insertHead(4);
+//        list.printAll();
+        list.remove(4);
         list.printAll();
-        MyLinkedList.Node byValue = list.findByValue(2);
-        System.out.println(byValue.toString());
+//        MyLinkedList.Node byValue = list.findByValue(2);
+//        System.out.println(byValue.toString());
 //        MyLinkedList.Node reverse = list.reverse();
 //        list = new MyLinkedList(reverse);
 //        list.printAll();

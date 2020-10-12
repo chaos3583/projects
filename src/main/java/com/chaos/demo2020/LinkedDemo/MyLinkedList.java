@@ -119,8 +119,10 @@ public class MyLinkedList {
         while (nextNode!=null){
             if (nextNode.next==null){
                 //最后一个节点
-                topNode.next=null;
-                return true;
+                if (nextNode.data==value){
+                    topNode.next=null;
+                    return true;
+                }
             }else{
                 if (nextNode.data==value){
                     topNode.next=nextNode.next;
