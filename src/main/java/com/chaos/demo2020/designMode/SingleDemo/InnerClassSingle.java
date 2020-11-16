@@ -1,4 +1,4 @@
-package com.chaos.demo2020.SingleDemo;
+package com.chaos.demo2020.designMode.SingleDemo;
 
 /**
  * 使用内部类实现的单例模式
@@ -16,6 +16,7 @@ public class InnerClassSingle {
     }
 
     public static InnerClassSingle getInstance(){
+        System.out.println("getinstance");
         return Innner.single;
     }
 }

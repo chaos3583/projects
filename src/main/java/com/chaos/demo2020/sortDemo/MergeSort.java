@@ -33,10 +33,10 @@ public class MergeSort {
      *   循环结束后至少有一个数组的元素全部放到了临时数组
      * 4、将还有元素的数组按顺序放到临时数组
      * 5、将临时数组拷贝到原数组
-     * @param a
-     * @param p
-     * @param q
-     * @param r
+     * @param a 原数组
+     * @param p 开始
+     * @param q 中间
+     * @param r 结束
      */
     public static void merge(int[] a, int p, int q,int r){
         int[] temp=new int[r-p+1];

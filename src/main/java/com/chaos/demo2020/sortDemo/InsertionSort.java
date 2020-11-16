@@ -11,14 +11,16 @@ public class InsertionSort {
         if (a.length <= 0) {
             return;
         }
-        for (int i = 0; i < a.length; i++) {
-            int i1 = a[i];
-            for (int j = a.length - 1; j > i; j--) {
-                if (a[j] < a[i]) {
-                    int temp = a[i];
-
-                }
+        for (int i = 1; i < a.length; i++) {
+            int value = a[i];
+            int j=i-1;
+            for (; j >=0; --j) {
+                if (value < a[j]) {
+                    a[j+1] = a[j];//移动已排序区间的值
+                }else{break;}
             }
+            a[j+1]=value;//插入
         }
+
     }
 }
