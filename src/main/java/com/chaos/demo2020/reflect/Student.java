@@ -8,7 +8,7 @@ import java.util.Date;
  * * @author: liaopeng
  * * @create: 2020-10-30 11:31
  **/
-public class Student {
+public class Student extends People{
     private int age;
 
     private String name;
